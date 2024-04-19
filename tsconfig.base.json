@@ -1,0 +1,33 @@
+{
+    "conpilerOptions":{
+        "target":"esnext", //编译生成js的版本,这里表示使用最新的版本
+        "baseUrl":"./", //ts解析文件时，会从该文件所在的根目录进行解析
+        "module":"esnext", //这里表示编译成的js文件使用最新的模块化
+        "outDir":"dist", //指定编译后文件所在的目录
+        "rootDir":".", //指定输入文件的根目录，这回告诉ts编译的时候从哪个根目录开始
+        "moduleResolution":"node",//用于指定模块解析的策略，有两种，node更兼容现代js的模块系统
+        "strict":true, //是否开启严格模式
+        "sourceMap":true, //是否生成源映射文件，生成的话，映射文件会将ts代码映射回js代码，这样调试的时候就可以调试源ts代码而不是编译后的js代码
+        "jsx":"preserve", //对jsx的处理，这里是保留jsx，jsx的运用场景：比如我们需要用的jsx语法，但是我们不希望ts对jsx进行更改而是交给其他的工具对其进行处理就可以这样配置
+        "importHelpers":true, //是否引入辅助函数，辅助函数的引入可以减小代码冗余的体积，比如每个文件都使用了async/await，那么开启这一项，就会只引入这些代码一次，就没必要每个文件都重新引入
+        "esModuleInterop":true, //当我们的ts项目中存在CommonJS和ESmodule的时候，会存在兼容问题，而这个属性的开启就是解决这个问题的
+        "allowSyntheticDefaultImports":true, //当我们的模块没有默认导出时，我们通过默认导入的方式是不允许的，但是开启后是允许的，并且编译为js的时候会为我们添加一些代码
+        "allowJs":true, //是否对js进行编译，这样可以渐进式的让js向ts进行迁移
+        "removeComments":true, //是否移除注释
+        "declaration":true, //是否生成对应的.d.ts声明文件，这个文件可以让使用者在编译其中获得类型提示和类型检查的提示
+        "alwaysStrict":true, //和strict的区别在于strict更倾向于对ts要求严格，而这一个更关注于生成的js代码的执行模式和规范性
+        "noImplicitAny":true, //是否禁止隐式的any类型
+        "strictNullChecks":true, //是否严格检查null
+        "strictFunctionTypes":true, //是否对函数类型进行严格检查
+        "strictBindCallApply":true, //是否严格检查this的绑定
+        "declarationDir": "dist/types", //指定生成类型声明文件的目录
+        "strictPropertyInitialization": true, //强制类属性初始化，也就是定义类要给这个类的属性类型
+        "allowImportingTsExtensions": true, //允许导入扩展名，也就是在文件里面导入的时候可以省略扩展名
+        "noUnusedLocals": true, //声明了但未使用就会报错
+        "allowUnreachableCode": false, //不允许有不可到达的代码
+        "emitDeclarationOnly": true, //只生成类型声明文件不生成具体的js代码
+        "resolveJsonModule": true, //允许导入json文件并解析
+        "noFallthroughCasesInSwitch": true, //不允许case里面没有break
+        "allowUnusedLabels": false, //不允许定义了标签但不用
+        }
+}

@@ -1,0 +1,10 @@
+{
+    //告诉ts怎么处理node
+    "extends":"./tsconfig.base.json",
+    "compilerOptions": {
+        "composite": true, //增量编译
+        "lib":["ESNext"], //表示要用最新的ECMAScript内置库
+        "types": ["node"], //表示要引入的类型声明包
+    },
+    "include": ["./*.config.*", ".eslintrc.js"] //表示只编译config文件
+}
