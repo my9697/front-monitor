@@ -1,6 +1,6 @@
 import { type metricsName, type Imetrics } from '../types/performance'
 
-export default class metricsStore {
+export default class MetricsStore {
   storeData: Map<metricsName | string, Imetrics>
 
   constructor () {
@@ -11,12 +11,12 @@ export default class metricsStore {
     this.storeData.set(key, value)
   }
 
-  get (key: metricsName | string): Imetrics {
+  get (key: metricsName | string): Imetrics | undefined{
     return this.get(key)
   }
 
   add (key: metricsName | string, value: Imetrics): void {
-    const keyVal = this.storeData.get(key)
+    const keyVal: Imetrics = this.storeData.get(key)
     this.storeData.set(key, keyVal ? keyVal.concat([value]) : [value])
   }
 

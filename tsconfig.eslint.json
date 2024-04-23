@@ -2,8 +2,9 @@
     //当ts和eslint同时使用的时候，告诉eslint要怎么检查ts
     "extends":"./tsconfig.base.json",
     "compilerOptions": {
+        "emitDeclarationOnly": false,
         "noEmit": true, //只检查不编译
     },
     "include": ["**/*","**/*.*"],
-    "exclude": ["**/dist","**/node_modules"]
+    "exclude": ["**/dist","**/node_modules","prettier.config.mjs"]
 }
