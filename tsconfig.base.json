@@ -1,5 +1,7 @@
 {
-    "conpilerOptions":{
+    "compilerOptions":{
+        "typeRoots": ["node_modules/@types", "types"],
+        "types": ["babel__core"],
         "target":"esnext", //编译生成js的版本,这里表示使用最新的版本
         "baseUrl":"./", //ts解析文件时，会从该文件所在的根目录进行解析
         "module":"esnext", //这里表示编译成的js文件使用最新的模块化
@@ -16,7 +18,7 @@
         "removeComments":true, //是否移除注释
         "declaration":true, //是否生成对应的.d.ts声明文件，这个文件可以让使用者在编译其中获得类型提示和类型检查的提示
         "alwaysStrict":true, //和strict的区别在于strict更倾向于对ts要求严格，而这一个更关注于生成的js代码的执行模式和规范性
-        "noImplicitAny":true, //是否禁止隐式的any类型
+        "noImplicitAny":true, //是否禁止隐式的any类
         "strictNullChecks":true, //是否严格检查null
         "strictFunctionTypes":true, //是否对函数类型进行严格检查
         "strictBindCallApply":true, //是否严格检查this的绑定
