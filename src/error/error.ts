@@ -1,13 +1,13 @@
-import { type ErrorData, ErrorType, type ErrorOptions } from "src/types/error";
-import type { HttpMetrics } from "src/types/userAction";
+import { type ErrorData, ErrorType, type ErrorOptions } from "../types/error";
+import type { HttpMetrics } from "../types/userAction";
 import { getErrorKey } from "./getErrorKey";
-import { getErrorUidUtil } from "src/utils/getErrorUidUtil";
+import { getErrorUidUtil } from "../utils/getErrorUidUtil";
 import { parseErrorStackFrame } from "./getErrorUid";
-import { getPageInformation } from "src/userAction/getPageInformation";
-import { proxyFetch } from "src/userAction/proxyFetch";
-import { proxyXMLHttp } from "src/userAction/proxyXMLHttp";
-import type { Report } from "src/types/core";
-import type Monitor from "src/core/core";
+import { getPageInformation } from "../userAction/getPageInformation";
+import { proxyFetch } from "../userAction/proxyFetch";
+import { proxyXMLHttp } from "../userAction/proxyXMLHttp";
+import type { Report } from "../types/core";
+import type Monitor from "../core/core";
 
 export default class ErrorMonitor {
   private readonly options: ErrorOptions;

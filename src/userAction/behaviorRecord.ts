@@ -1,7 +1,7 @@
 import type {
   BehaviorStack,
   behaviorRecordOptions,
-} from "src/types/userAction";
+} from "../types/userAction";
 
 export default class BehaviorStore {
   private state: BehaviorStack[];

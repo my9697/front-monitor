@@ -6,8 +6,8 @@ import { getNavigationTiming } from "./getNavigationTiming";
 import { getResourceTiming } from "./getResourceTiming";
 import { getCacheData } from "./getCacheData";
 import { MetricsName, type PerfomanceOption } from "../types/performance";
-import type { Report } from "src/types/core";
-import type Monitor from "src/core/core";
+import type { Report } from "../types/core";
+import type Monitor from "../core/core";
 
 export default class PerformanceMonitor {
   private readonly data: MetricsStore;

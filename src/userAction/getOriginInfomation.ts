@@ -1,4 +1,4 @@
-import type { OriginInfomation } from "src/types/userAction";
+import type { OriginInfomation } from "../types/userAction";
 
 export function getOriginInfomation(): OriginInfomation {
   return {

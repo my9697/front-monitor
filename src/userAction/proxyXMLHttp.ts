@@ -1,5 +1,5 @@
-import type { HttpMetrics } from "src/types/userAction";
-import { formatDate } from "src/utils/formatDate";
+import type { HttpMetrics } from "../types/userAction";
+import { formatDate } from "../utils/formatDate";
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type, @typescript-eslint/no-explicit-any
 export function proxyXMLHttp(loadHandendler: (...args: any[]) => any) {

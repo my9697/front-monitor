@@ -1,8 +1,8 @@
-import ErrorMonitor from "src/error/error";
-import PerformanceMonitor from "src/performance/performance";
-import UserActionMonitor from "src/userAction/userAction";
-import { MonitorConfig, type Options } from "src/types/core";
-import { formatDate } from "src/utils/formatDate";
+import ErrorMonitor from "../error/error";
+import PerformanceMonitor from "../performance/performance";
+import UserActionMonitor from "../userAction/userAction";
+import { MonitorConfig, type Options } from "../types/core";
+import { formatDate } from "../utils/formatDate";
 
 export default class Monitor {
   public appId: string;
@@ -26,8 +26,8 @@ export default class Monitor {
       },
       options
     );
-    (window as any).ziMuSetUserId = this.setUserId.bind(this);
-    (window as any).ziMuSetExtra = this.setExtra.bind(this);
+    (window as any).mYuSetUserId = this.setUserId.bind(this);
+    (window as any).mYuSetExtra = this.setExtra.bind(this);
     this.installInnerTracker();
   }
 

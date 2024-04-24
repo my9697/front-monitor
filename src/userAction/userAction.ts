@@ -6,10 +6,10 @@ import BehaviorStore from "./behaviorRecord";
 import { proxyFetch } from "./proxyFetch";
 import { proxyXMLHttp } from "./proxyXMLHttp";
 import { trackRouteChange } from "./trackRouteChange";
-import { formatDate } from "src/utils/formatDate";
-import { afterLoad } from "src/utils/performance-utils";
-import type { Report } from "src/types/core";
-import type Monitor from "src/core/core";
+import { formatDate } from "../utils/formatDate";
+import { afterLoad } from "../utils/performance-utils";
+import type { Report } from "../types/core";
+import type Monitor from "../core/core";
 import { writeReplaceStateAndPushState } from "./writeReplaceStateAndPushState";
 
 export default class UserActionMonitor {
