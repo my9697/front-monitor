@@ -53,7 +53,7 @@ export default class ErrorMonitor {
           behaviorStack: this.monitor.userActionMonitor?.behaviorStack.get(),
           pageInfo: getPageInformation(),
         };
-        console.log(errorData);
+        this.errorDataReport(errorData);
       },
       true
     );

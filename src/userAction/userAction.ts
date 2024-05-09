@@ -1,4 +1,8 @@
-import type { UserActionOptions, HttpMetrics } from "../types/userAction";
+import type {
+  UserActionOptions,
+  HttpMetrics,
+  IPVData,
+} from "../types/userAction";
 import { getPageInformation } from "./getPageInformation";
 import { MetricsName } from "../types/userAction";
 import { getOriginInfomation } from "./getOriginInfomation";
@@ -32,6 +36,7 @@ export default class UserActionMonitor {
         CBR: true,
         CDR: true,
         HR: true,
+        BS: true,
         PV: true,
         behavior: true,
         elementTrackedList: ["button", "div"],
@@ -105,11 +110,19 @@ export default class UserActionMonitor {
 
   private initPV() {
     const handler = () => {
-      const PVData = {
+      let time = 0;
+      const getTime = new Date().getTime();
+      const PVData: IPVData = {
         pageInfo: getPageInformation(),
         originInfo: getOriginInfomation(),
+        PVTime: undefined,
       };
-      this.report(PVData, "PV");
+      if (time === 0) {
+        time = getTime;
+      } else {
+        PVData.PVTime = getTime - time;
+        this.report(PVData, "PV");
+      }
     };
     afterLoad(handler);
     trackRouteChange(handler);

@@ -16,7 +16,7 @@ export function getCacheData() {
   });
   return {
     cacheHitCount,
-    noCacheHitRate: resourceDatas.length - cacheHitCount,
+    noCacheHitCount: resourceDatas.length - cacheHitCount,
     cacheHitRate: (cacheHitCount / resourceDatas.length).toFixed(2),
   };
 }

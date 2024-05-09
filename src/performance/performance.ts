@@ -78,9 +78,9 @@ export default class PerformanceMonitor {
     this.data.set(MetricsName.NT, navigation);
   }
 
-  private initRF() {
+  private initRT() {
     const resourceTiming = getResourceTiming();
-    this.data.set(MetricsName.RF, resourceTiming);
+    this.data.set(MetricsName.RT, resourceTiming);
   }
 
   private initCD() {
@@ -96,7 +96,7 @@ export default class PerformanceMonitor {
 
     afterLoad(() => {
       if (this.options.NT) this.initNT();
-      if (this.options.RF) this.initRF();
+      if (this.options.RT) this.initRT();
       if (this.options.CD) this.initCD();
     });
   }

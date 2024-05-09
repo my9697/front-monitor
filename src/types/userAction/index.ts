@@ -13,6 +13,7 @@ export interface UserActionOptions {
   CBR?: boolean;
   CDR?: boolean;
   HR?: boolean;
+  BS?: boolean;
   PV?: boolean;
   behavior?: boolean;
   elementTrackedList?: string[];
@@ -90,4 +91,10 @@ export interface HttpMetrics {
   status: number;
   statusText: string;
   response?: any;
+}
+
+export interface IPVData {
+  pageInfo: PageInfomation;
+  originInfo: OriginInfomation;
+  PVTime?: number;
 }

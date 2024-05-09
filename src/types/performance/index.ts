@@ -4,7 +4,7 @@ export enum MetricsName {
   FID = "first-input-delay",
   CLS = "content-location-skewing",
   NT = "navigation-timing",
-  RF = "resorce-flow",
+  RT = "resorceFlow-time",
   CD = "cache-data",
 }
 
@@ -59,6 +59,6 @@ export interface PerfomanceOption {
   FID?: boolean;
   CLS?: boolean;
   NT?: boolean;
-  RF?: boolean;
+  RT?: boolean;
   CD?: boolean;
 }

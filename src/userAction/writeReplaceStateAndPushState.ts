@@ -1,9 +1,7 @@
 /**
- * 首先我们要明白，popstate是当我们的历史记录发生变化的时候就会被调用
- * 而replaceState和pushState则是对历史记录进行更改的
- * 简单点就是路由切换使历史变化，历史变化需要更改就会触发replaceState和pushState，
- * 历史更改就会触发popstate.
- * 而我们之所以要重写replaceState和pushState，是为了获取前一个页面的信息
+ * 这里我们要知道replaceState和pushState本身不会触发popstate事件。
+ * 也不会触发任何事件，因此通过addEventListener不能监听到这两个
+ * 所以我们需要改写一下，在改写函数的内部，把replaceState和pushState派发出去
  */
 
 type HistoryName = "replaceState" | "pushState";

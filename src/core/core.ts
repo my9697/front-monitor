@@ -28,10 +28,10 @@ export default class Monitor {
     );
     (window as any).mYuSetUserId = this.setUserId.bind(this);
     (window as any).mYuSetExtra = this.setExtra.bind(this);
-    this.installInnerTracker();
+    this.addMonitor();
   }
 
-  private installInnerTracker() {
+  private addMonitor() {
     if (this.options.performanceMonitor) {
       this.performanceMonitor = new PerformanceMonitor(
         this.options.performanceMonitor,
